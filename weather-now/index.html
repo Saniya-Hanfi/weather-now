@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌤️ Weather Now</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0072ff" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="card" id="weatherCard">
+      <div class="header">
+        <h1>🌤️ Weather Now</h1>
+        <button id="themeToggle" title="Toggle theme">🌙</button>
+      </div>
+
+      <p class="tagline">Get real-time weather updates instantly!</p>
+
+      <div class="search-box">
+        <input type="text" id="cityInput" placeholder="Enter city name..." />
+        <button id="searchBtn">Search</button>
+      </div>
+
+      <div id="weatherResult" class="weather-result">
+        <p>Type a city name to check the weather 🌍</p>
+      </div>
+    </div>
+
+    <!-- 📲 Install App Button -->
+    <div id="installContainer">
+      <button id="installBtn">📲 Install App</button>
+    </div>
+  </div>
+
+  <!-- ✅ Install Popup Notification -->
+  <div id="installPopup" class="popup hidden">
+    <p>✅ App ready to install!</p>
+  </div>
+
+  <footer>
+    Made for <strong>Jamie</strong> – The Outdoor Enthusiast 🌿
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // ✅ Register Service Worker
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register("service-worker.js")
+        .then(() => console.log("✅ Service Worker Registered"))
+        .catch((err) => console.log("Service Worker failed:", err));
+    }
+  </script>
+</body>
+</html>
+
